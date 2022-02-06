@@ -6,7 +6,7 @@ $(function(){
     btn_agregar.click(function(){
         //Creacion de un item nuevo para la lista con el valor del textarea
         var item = $("<li></li>").text(txt_tarea.val())
-        item.addClass("list-group-item")
+        item.addClass("list-group-item d-flex justify-content-between")
         //Creamos un boton para poder Eliminar la tarea
         var btn_eliminar = $('<button class="btn btn-danger"></button>')
         btn_eliminar.text("Eliminar")
@@ -14,9 +14,12 @@ $(function(){
         btn_eliminar.addClass("btn-eliminar")
         //agregamos el item a la lista
         lista_tareas.append(item)
+        txt_tarea.val("")
+        txt_tarea.focus()
 
         btn_eliminar.on("click", function(){
             $(this).parent().remove();
+            txt_tarea.focus()
         });
 
     })
