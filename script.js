@@ -15,5 +15,9 @@ $(function(){
         //agregamos el item a la lista
         lista_tareas.append(item)
 
+        btn_eliminar.on("click", function(){
+            $(this).parent().remove();
+        });
+
     })
 });
